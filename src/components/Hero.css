@@ -1,0 +1,131 @@
+.hero {
+  position: relative;
+  padding-block: clamp(7rem, 14vh, 10.5rem) clamp(1.6rem, 3vh, 2.5rem);
+  background: var(--bark);
+  color: var(--on-bark-soft);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__wash {
+  position: absolute;
+  inset: -25% -10% -5%;
+  z-index: 0;
+  background:
+    radial-gradient(46% 40% at 50% 46%, rgba(138, 110, 72, 0.5), transparent 70%),
+    radial-gradient(40% 36% at 86% 16%, rgba(196, 147, 78, 0.26), transparent 70%),
+    radial-gradient(36% 34% at 10% 74%, rgba(142, 156, 54, 0.16), transparent 72%);
+}
+
+.hero .shell { position: relative; z-index: 2; }
+
+.hero__kicker { text-align: center; margin-bottom: clamp(1.1rem, 2.4vw, 1.8rem); color: var(--gold-300); }
+
+.hero__title {
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.028em;
+  text-align: center;
+  color: var(--on-bark);
+  font-variation-settings: 'SOFT' 28, 'WONK' 1;
+}
+.hero__title .line { display: block; }
+
+.hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr) minmax(0, 0.82fr);
+  gap: clamp(1.4rem, 3.5vw, 3rem);
+  align-items: center;
+  margin-top: clamp(1.4rem, 3vw, 2.8rem);
+}
+
+.hero__left .lead { max-width: 36ch; color: var(--on-bark-soft); }
+
+.hero__claims {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: clamp(1.1rem, 2.2vw, 1.6rem);
+}
+.hero__claims span {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line-bark);
+  border-radius: 999px;
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.hero__stage { display: grid; place-items: center; }
+/* the render is an 831 x 1500 crop, so width is what sets the height */
+.hero__stage .fb { width: clamp(188px, 20vw, 290px); }
+.hero__stage .fb__img { aspect-ratio: 831 / 1500; }
+
+.hero__specs { margin: 0; display: grid; gap: 0.1rem; }
+.hero__specs > div { padding: 0.85rem 0; border-top: 1px solid var(--line-bark); }
+.hero__specs > div:last-child { border-bottom: 1px solid var(--line-bark); }
+.hero__specs dt {
+  font-size: var(--fs-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-bark-mute);
+  margin-bottom: 0.2rem;
+}
+.hero__specs dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  color: var(--on-bark);
+}
+
+.hero__foot {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+.hero__support .label { margin-bottom: 0.8rem; color: var(--on-bark-mute); }
+.hero__logos { display: flex; align-items: center; gap: 0.7rem; }
+.hero__logo--innov8 { height: clamp(28px, 3vw, 34px); width: auto; }
+.hero__logo--tet { height: clamp(18px, 2vw, 23px); width: auto; }
+
+.hero__scroll {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  flex: none;
+  border: 1px solid var(--line-bark);
+  border-radius: 50%;
+  color: var(--on-bark-soft);
+  transition: background 0.35s var(--ease-soft), color 0.3s, border-color 0.3s;
+  animation: hero-bob 2.8s var(--ease-soft) infinite;
+}
+.hero__scroll:hover { background: var(--gold-600); color: var(--cream-50); border-color: var(--gold-600); }
+@keyframes hero-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+@media (max-width: 1000px) {
+  .hero__body { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 2rem; margin-top: 1.5rem; }
+  .hero__left { order: 2; }
+  .hero__left .lead { max-width: 48ch; margin-inline: auto; }
+  .hero__claims { justify-content: center; }
+  .hero__stage { order: 1; }
+  .hero__stage .fb { width: clamp(168px, 42vw, 260px); }
+  .hero__specs { order: 3; width: min(100%, 420px); text-align: left; }
+}
+
+@media (max-width: 620px) {
+  .hero { padding-top: 6.5rem; }
+  .hero__title .line { display: inline; }
+  .hero__title .line + .line::before { content: ' '; }
+  .hero__foot { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+  .hero__scroll { display: none; }
+}

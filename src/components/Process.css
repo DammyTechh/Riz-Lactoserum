@@ -1,0 +1,80 @@
+.process { background: var(--cream-50); }
+
+.process__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  padding-bottom: clamp(2.6rem, 6vw, 4.5rem);
+}
+.process__title { font-size: var(--fs-h1); margin-top: clamp(0.9rem, 2vw, 1.4rem); }
+.process__lead { padding-bottom: 0.3rem; }
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 2.6rem) clamp(1.2rem, 2.6vw, 2.2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: phase;
+}
+
+.phases li { position: relative; padding-top: 1.8rem; }
+
+/* the hairline the dots sit on */
+.phases__rail {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--line);
+}
+.phases__dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 9px; height: 9px;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: var(--cream-50);
+  border: 2px solid var(--gold-500);
+  transition: background 0.4s var(--ease-soft), transform 0.4s var(--ease);
+}
+.phases li:hover .phases__dot { background: var(--gold-600); transform: translate(0, -50%) scale(1.25); }
+
+.phases__icon {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: var(--olive-100);
+  color: var(--olive-700);
+}
+.phases h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: var(--fs-h3);
+}
+.phases__n {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gold-600);
+}
+.phases__body {
+  margin-top: 0.7rem;
+  max-width: 38ch;
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 1000px) {
+  .process__head { grid-template-columns: 1fr; align-items: start; }
+  .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 580px) {
+  .phases { grid-template-columns: 1fr; }
+}

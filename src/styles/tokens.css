@@ -1,0 +1,71 @@
+/* ------------------------------------------------------------------
+   RIZ LACTOSERUM, design tokens
+   Palette sampled from the logo: wheat #C4934E, olive #8E9C36,
+   deep husk #7F5A2E. Everything else is built around them.
+-------------------------------------------------------------------*/
+:root {
+  /* --- wheat gold (primary) --- */
+  --gold-900: #5B4120;
+  --gold-800: #7F5A2E;
+  --gold-700: #A5783A;
+  --gold-600: #C4934E;
+  --gold-500: #D3A569;
+  --gold-300: #E7CB9F;
+  --gold-100: #F6E9D3;
+
+  /* --- olive (secondary) --- */
+  --olive-800: #4D5622;
+  --olive-700: #6E7A2B;
+  --olive-600: #8E9C36;
+  --olive-400: #B2BD78;
+  --olive-100: #E9EDD8;
+
+  /* --- cream grounds --- */
+  --cream-50:  #FDFBF6;
+  --cream-100: #F9F4EA;
+  --cream-200: #F3ECDE;
+  --cream-300: #EBE0CE;
+  --cream-400: #D9CAB0;
+
+  /* --- the one deep band --- */
+  --bark:      #52412C;
+  --bark-soft: #6B573D;
+
+  /* --- semantic --- */
+  --ink:       #342818;
+  --ink-soft:  #574733;
+  --ink-mute:  #76644C;
+  --paper:     var(--cream-100);
+  --line:      rgba(52, 40, 24, 0.13);
+  --line-firm: rgba(52, 40, 24, 0.22);
+
+  --on-bark:      #FAF5EB;
+  --on-bark-soft: rgba(248, 241, 228, 0.82);
+  --on-bark-mute: rgba(240, 231, 214, 0.64);
+  --line-bark:    rgba(244, 233, 214, 0.22);
+
+  /* --- type --- */
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans Variable', 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-display: clamp(2.7rem, 6.2vw, 5.4rem);
+  --fs-h1:      clamp(2.3rem, 5.2vw, 4.4rem);
+  --fs-h2:      clamp(1.95rem, 4vw, 3.2rem);
+  --fs-h3:      clamp(1.35rem, 2vw, 1.8rem);
+  --fs-h4:      clamp(1.08rem, 1.3vw, 1.25rem);
+  --fs-lead:    clamp(1.08rem, 1.5vw, 1.4rem);
+  --fs-body:    clamp(1rem, 1.05vw, 1.07rem);
+  --fs-small:   clamp(0.88rem, 0.95vw, 0.95rem);
+  --fs-label:   clamp(0.68rem, 0.78vw, 0.78rem);
+
+  /* --- space --- */
+  --gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --section-y: clamp(5rem, 10vw, 10rem);
+  --max: 1400px;
+
+  /* --- motion --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 16px;
+  --radius-lg: 26px;
+}
