@@ -5,6 +5,7 @@ import Texture from './components/Texture';
 import Process from './components/Process';
 import Ritual from './components/Ritual';
 import Inside from './components/Inside';
+import Team from './components/Team';
 import Closing from './components/Closing';
 import Footer from './components/Footer';
 import useReveal from './hooks/useReveal';
@@ -23,6 +24,7 @@ export default function App() {
         <Process />
         <Ritual />
         <Inside />
+        <Team />
         <Closing />
       </main>
       <Footer />

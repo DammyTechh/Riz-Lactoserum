@@ -61,3 +61,11 @@ the contact shadow beyond the narrow image box.
 - Icons are five strokes or fewer at 1.8 weight, so they hold at 18px.
 - Everything respects `prefers-reduced-motion`.
 - Partner logos sit on a cream plate and keep their own brand colours.
+
+## The team section
+
+`src/components/Team.jsx` sits just before the closing block and is set as
+an editorial spread: the photograph left in the apothecary arch, the credit right. The photograph is `src/assets/team.webp`, 1700px wide, cropped with
+`aspect-ratio` plus `object-position` so all three faces survive the crop at
+every width. No names are printed yet; add them to the component when you
+have them.

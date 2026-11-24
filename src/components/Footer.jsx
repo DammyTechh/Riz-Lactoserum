@@ -3,7 +3,7 @@ import './Footer.css';
 
 const COLS = [
   { title: 'The serum', links: [['Formula', '#formula'], ['Texture', '#texture'], ['Inside', '#inside']] },
-  { title: 'The making', links: [['Process', '#process'], ['Ritual', '#ritual'], ['Checked', '#closing']] },
+  { title: 'The making', links: [['Process', '#process'], ['Ritual', '#ritual'], ['Team', '#team'], ['Checked', '#closing']] },
 ];
 
 export default function Footer() {
